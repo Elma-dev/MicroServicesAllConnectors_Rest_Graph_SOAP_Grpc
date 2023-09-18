@@ -29,6 +29,6 @@ public class CustomerGraphqlController {
 
     @MutationMapping
     public Customer saveCustomer(@Argument CustomerRequest customer){
-        return customerRepository.save(CustomerMapper.customerRequestToCustomer(customer)); 
+        return customerRepository.save(CustomerMapper.customerRequestToCustomer(customer));
     }
 }
