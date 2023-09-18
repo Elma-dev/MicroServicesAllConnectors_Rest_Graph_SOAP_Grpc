@@ -23,12 +23,12 @@ public class CustomerSoapController {
         return customerRepository.findAll();
     }
     @WebMethod
-    public Customer getCustomerById(@WebParam Long id){
+    public Customer getCustomerById(@WebParam(name = "id") Long id){
         return customerRepository.findById(id).get();
     }
 
     @WebMethod
-    public Customer saveCustomer(@WebParam CustomerRequest customerRequest){
+    public Customer saveCustomer(@WebParam(name = "customer") CustomerRequest customerRequest){
         return customerRepository.save(CustomerMapper.customerRequestToCustomer(customerRequest));
     }
 
