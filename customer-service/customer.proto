@@ -1,0 +1,27 @@
+syntax="proto3";
+
+service customer_service{
+  rpc getAllCustomers(Request) returns(Customers);
+  rpc getCustomerById(IdRequest) returns(Customer);
+  rpc saveCustomer(CustomerRequest) returns(Customer);
+}
+
+message Request{}
+
+message Customer{
+  int64 id=1;
+  string name=2;
+  string email=3;
+}
+
+message Customers{
+  repeated Customer customer=1;
+}
+message IdRequest{
+  int64 Id=1;
+}
+
+message CustomerRequest{
+  string name=1;
+  string email=2;
+}
